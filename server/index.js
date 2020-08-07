@@ -10,14 +10,12 @@ app.use(parser.urlencoded({extended: false}));
 
 app.listen(port, () => console.log(`Listening At Port ${port}`))
 
-app.get('/reviews', (req, res) => {});
-
 app.get('/reviews', (req, res) => {
   model.getUsers((err, data) => {
     if (err) {
-      res.status(400).send()
+      res.status(400)
     } else {
-      res.stauts(200).send(data);
+      res.status(200).send(data);
     }
-  })
-})
+  });
+});
