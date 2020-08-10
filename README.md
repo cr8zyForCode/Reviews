@@ -1,4 +1,4 @@
-# Project Name
+# AirBnb
 
 7LuckyAirbnboiiz clone of AirBnB. Front-End Capstone project from Hack Reactor
 
