@@ -13,6 +13,7 @@ const App = () => {
 
 
   return (
+    // pass props to designated components
     <div className="reviews-section">
       <hr />
         <Stars />

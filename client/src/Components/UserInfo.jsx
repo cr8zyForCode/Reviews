@@ -2,6 +2,7 @@ import React from 'react';
 const faker = require("faker");
 
 function UserInfo(props) {
+  // replace img, username, userReviewDate and review with proper values
   return (
     <div className="user">
       <img
