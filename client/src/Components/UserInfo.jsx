@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../Styles/UserInfo.css';
 const faker = require("faker");
 
-function UserInfo(props) {
+const UserInfo = (props) => {
   // replace img, username, userReviewDate and review with proper values
   return (
     <div className={styles.user}>
