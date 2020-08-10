@@ -15,7 +15,7 @@ const UserInfo = (props) => {
         <br />
         <span className={styles.userDate}> January 1 2020 </span>
       </span>
-      <p className={styles.userReview}>{faker.lorem.paragraph()}</p>
+      <p className={styles.userReview}>{faker.lorem.sentences()}</p>
     </div>
   );
 }
