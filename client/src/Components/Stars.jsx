@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../Styles/Stars.css';
 
-function Stars(props) {
+const Stars = (props) => {
   // get the avg of stars from all the total ratings
   return (
     <div className={styles.starComp}>
