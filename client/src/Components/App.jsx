@@ -59,6 +59,7 @@ class App extends React.Component {
     return (
       <div className={styles.reviewSection}>
         <hr className={styles.hor} />
+
         <Stars
           reviews={this.filterReviews()}
           currentHouse={this.state.currentHouse}
