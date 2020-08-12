@@ -1,6 +1,7 @@
 import RatingsContainer from "../client/src/Components/RatingsContainer.jsx";
 import RatingsBar from "../client/src/Components/RatingsBar.jsx";
 
+
 describe("<RatingsContainer /> rendering", () => {
   it("should have an RatingsContainer component", () => {
     let component = shallow(<RatingsContainer/>);

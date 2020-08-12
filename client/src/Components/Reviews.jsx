@@ -2,21 +2,23 @@ import React from 'react';
 import styles from '../Styles/Reviews.css';
 import UserInfo from './UserInfo.jsx';
 
-class Reviews extends React.Component {
+const Reviews = (props) => {
 
   // map trhough 6 data entries
-  render() {
-    return (
-      <div className={styles.reviews}>
-        <UserInfo />
-        <UserInfo />
-        <UserInfo />
-        <UserInfo />
-        <UserInfo />
-        <UserInfo />
-      </div>
-    );
+  const sixEntries = () => {
+   return props.reviews.filter((review, index) => (
+      index < 6
+    ));
   }
+
+  return (
+    <div className={styles.reviews}>
+      {sixEntries().map((review, index) => (
+        <UserInfo key={review.userId} review={review} user={props.users[review.userId]} currentHouse={props.currentHouse}/>
+      ))}
+    </div>
+  )
+
 }
 
 export default Reviews;
