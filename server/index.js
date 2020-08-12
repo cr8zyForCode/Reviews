@@ -19,3 +19,34 @@ app.get('/reviews/users', (req, res) => {
     }
   });
 });
+
+
+app.get("/reviews/houses", (req, res) => {
+  model.getHouses((err, data) => {
+    if (err) {
+      res.status(400);
+    } else {
+      res.status(200).send(data);
+    }
+  });
+});
+
+app.get("/reviews", (req, res) => {
+  model.getReviews((err, data) => {
+    if (err) {
+      res.status(400);
+    } else {
+      res.status(200).send(data);
+    }
+  });
+});
+
+app.get("/reviews/comments", (req, res) => {
+  model.getComments((err, data) => {
+    if (err) {
+      res.status(400);
+    } else {
+      res.status(200).send(data);
+    }
+  });
+});

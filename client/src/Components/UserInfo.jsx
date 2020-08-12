@@ -3,19 +3,20 @@ import styles from '../Styles/UserInfo.css';
 const faker = require("faker");
 
 const UserInfo = (props) => {
-  // replace img, username, userReviewDate and review with proper values
+
   return (
     <div className={styles.user}>
       <img
         className={styles.userUrl}
-        src="https://7528userurl.s3-us-west-1.amazonaws.com/userImage110.jpg"
+        src={props.user.userUrl}
+        onClick={() => {alert(`Hi my name is ${props.user.userName}`)}}
       />
       <span>
-        <span className={styles.userName}> Ashley </span>
+        <span className={styles.userName}> {props.user.userName} </span>
         <br />
-        <span className={styles.userDate}> January 1 2020 </span>
+        <span className={styles.userDate}> {props.user.dateReviewed} </span>
       </span>
-      <p className={styles.userReview}>{faker.lorem.sentences()}</p>
+      <p className={styles.userReview}>{props.review.review}</p>
     </div>
   );
 }

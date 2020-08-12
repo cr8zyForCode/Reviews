@@ -3,10 +3,27 @@ import styles from '../Styles/Stars.css';
 
 const Stars = (props) => {
   // get the avg of stars from all the total ratings
+
+  let total = 0;
+  let numberOfReview = 0;
+  const average = () => {
+    props.reviews.map((review) => {
+      total += review.cleanRating
+      total += review.accRating
+      total += review.commRating
+      total += review.locationRating
+      total += review.checkInRating
+      total += review.valueRating
+      numberOfReview += 1;
+    })
+  }
+
+  average();
+
   return (
     <div className={styles.starComp}>
       <img className={styles.star} src="https://7528bnbimages.s3-us-west-1.amazonaws.com/bnbstar.png"/>
-      <span className={styles.reviewText}>4.92 (255 reviews)</span>
+      <span className={styles.reviewText}>{((total / 6) / numberOfReview).toFixed(2)} ({numberOfReview} reviews)</span>
     </div>
   );
 }
