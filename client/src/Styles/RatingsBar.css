@@ -1,3 +1,38 @@
-.ratingsBar {
-  width: 55%;
+.ratingNumber{
+  margin-bottom: 10px;
+  margin-left: -90px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.middle {
+  margin-top:10px;
+  float: left;
+  width: 70%;
+}
+
+.row:after {
+  display: table;
+}
+
+.barBackground {
+  width: 120px;
+  background-color: #cccccc;
+  text-align: center;
+  color: white;
+}
+
+.ratingBar {
+  width: 90%;
+  height: 3px;
+  background-color: black;
+}
+
+@media (max-width: 120px) {
+  .side, .middle {
+    width: 100%;
+  }
+  .right {
+    display: none;
+  }
 }

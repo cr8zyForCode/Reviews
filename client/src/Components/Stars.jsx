@@ -28,4 +28,4 @@ const Stars = (props) => {
   );
 }
 
-export default Stars;
+export default Stars;0

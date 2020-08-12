@@ -4,12 +4,14 @@ import styles from '../Styles/App.css';
 import Stars from './Stars.jsx';
 import RatingsContainer from './RatingsContainer.jsx';
 import Reviews from './Reviews.jsx';
+import PopUp from './PopUp.jsx';
 
 class App extends React.Component {
 
   constructor() {
     super()
     this.state = {
+      popUp: false,
       currentHouse: 59, // Devonte
       users: [],
       houses: [],
@@ -19,6 +21,7 @@ class App extends React.Component {
     this.getAllData = this.getAllData.bind(this);
     this.filterReviews = this.filterReviews.bind(this);
     this.rdm = this.rdm.bind(this);
+    this.setPopUp = this.setPopUp.bind(this);
   }
 
   rdm (min, max) {
@@ -26,43 +29,11 @@ class App extends React.Component {
   };
 
   getAllData() {
-    axios.all([
-      axios
-        .get("/reviews/users")
-        .then((users) => {
-          this.setState({ users: users.data });
-        })
-        .catch((err) => {
-          console.log(err);
-        }),
-
-      axios
-        .get("/reviews/comments")
-        .then((comments) => {
-          this.setState({ comments: comments.data });
-        })
-        .catch((err) => {
-          console.log(err);
-        }),
-
-      axios
-        .get("/reviews/houses")
-        .then((houses) => {
-          this.setState({ houses: houses.data });
-        })
-        .catch((err) => {
-          console.log(err);
-        }),
-
-      axios
-        .get("/reviews")
-        .then((reviews) => {
-          this.setState({ reviews: reviews.data });
-        })
-        .catch((err) => {
-          console.log(err);
-        })
-    ]);
+    axios.get("/reviews/users").then((users) => (this.setState({users: users.data})))
+    axios.get("/reviews/comments").then((comments) => (this.setState({comments: comments.data})))
+    axios.get("/reviews/houses").then((houses) => (this.setState({houses: houses.data})))
+    axios.get("/reviews").then((reviews) => (this.setState({reviews: reviews.data})))
+    .catch()
   }
 
   componentDidMount () {
@@ -80,15 +51,32 @@ class App extends React.Component {
     return reviewsCopy;
   }
 
+  setPopUp() {
+    this.setState({popUp: !this.state.popUp})
+  }
+
   render () {
     return (
-      // pass props to designated components
       <div className={styles.reviewSection}>
         <hr className={styles.hor} />
-        <Stars reviews={this.filterReviews()} currentHouse={this.state.currentHouse} />
-        <RatingsContainer reviews={this.filterReviews()} currentHouse={this.state.currentHouse}/>
-        <Reviews users={this.state.users} reviews={this.filterReviews()} currentHouse={this.state.currentHouse}/>
+        <Stars
+          reviews={this.filterReviews()}
+          currentHouse={this.state.currentHouse}
+        />
+
+        <RatingsContainer
+          reviews={this.filterReviews()}
+          currentHouse={this.state.currentHouse}
+        />
+
+        <Reviews
+          users={this.state.users}
+          reviews={this.filterReviews()}
+          currentHouse={this.state.currentHouse}
+        />
+
         <button className={styles.showButton}>Show all {this.filterReviews().length} reviews</button>
+        {this.state.popUp ? <PopUp /> : null}
         <hr className={styles.hor} />
       </div>
     );
