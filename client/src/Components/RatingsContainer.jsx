@@ -16,7 +16,6 @@ const RatingsContainer = (props) => {
     return average;
   }
 
-
   return (
     <div className={styles.ratingsContainer}>
       <div className={styles.ratings}>
