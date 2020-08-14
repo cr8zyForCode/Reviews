@@ -1,3 +1,4 @@
+
 .hor {
   border: 0;
   height: 0;
@@ -5,7 +6,8 @@
 }
 
 .reviewSection {
-  margin: 50px 100px 50px;
+  display: grid;
+  justify-content: center;
 }
 
 .showButton {
@@ -36,4 +38,9 @@
 
 .showButton:focus {
   outline:0;
+}
+
+.popUp {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }

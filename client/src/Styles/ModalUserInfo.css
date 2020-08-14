@@ -4,8 +4,6 @@
 }
 
 .userUrl {
-  grid-row: 1/1;
-  grid-column: 1/1;
   min-width: 56px;
   max-width: 56px;
   min-height: 56px;

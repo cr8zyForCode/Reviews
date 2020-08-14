@@ -6,7 +6,6 @@ const RatingsBar = (props) => {
 
   return (
     <div className={styles.ratings}>
-      <div className={styles.row}>
         <div className={styles.middle}>
           <div className={styles.barBackground}>
             <div className={styles.ratingBar}>
@@ -16,7 +15,7 @@ const RatingsBar = (props) => {
         <span className={styles.ratingNumber}>
           {props.rating}
         </span>
-      </div>
+
     </div>
   );
 }

@@ -1,15 +1,14 @@
-import React from 'react';
-import styles from '../Styles/UserInfo.css';
+import React from "react";
+import styles from "../Styles/ModalUserInfo.css";
 
-const UserInfo = (props) => {
-
-  let [displayReadMore, setReadMore] = React.useState(false)
-  let [remainingReviews, setRemainingReviews] = React.useState('');
+const ModalUserInfo = (props) => {
+  let [displayReadMore, setReadMore] = React.useState(false);
+  let [remainingReviews, setRemainingReviews] = React.useState("");
 
   const handleMoreButton = (review) => {
-    setRemainingReviews(review)
-    setReadMore(!displayReadMore)
-  }
+    setRemainingReviews(review);
+    setReadMore(!displayReadMore);
+  };
 
   return (
     <div className={styles.user}>
@@ -33,8 +32,13 @@ const UserInfo = (props) => {
           {props.review.review.slice(0, 150)}
           {displayReadMore ? null : (
             <React.Fragment>
-            <span>...</span>
-            <button className={styles.readMore} onClick={() => handleMoreButton(props.review.review.slice(150))}>read more</button>
+              <span>...</span>
+              <button
+                className={styles.readMore}
+                onClick={() => handleMoreButton(props.review.review.slice(150))}
+              >
+                read more
+              </button>
             </React.Fragment>
           )}
           <span>{remainingReviews}</span>
@@ -42,6 +46,6 @@ const UserInfo = (props) => {
       )}
     </div>
   );
-}
+};
 
-export default UserInfo;
+export default ModalUserInfo;

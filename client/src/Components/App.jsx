@@ -22,6 +22,7 @@ class App extends React.Component {
     this.filterReviews = this.filterReviews.bind(this);
     this.rdm = this.rdm.bind(this);
     this.setPopUp = this.setPopUp.bind(this);
+    this.closePopUp = this.closePopUp.bind(this);
   }
 
   rdm (min, max) {
@@ -52,13 +53,25 @@ class App extends React.Component {
   }
 
   setPopUp() {
-    this.setState({popUp: !this.state.popUp})
+    this.setState({popUp: true})
+  }
+
+  closePopUp() {
+    this.setState({popUp: false})
   }
 
   render () {
+    if (this.state.popUp) {
+      document.body.style.overflow = "hidden";
+      document.body.style.background= "rgba(0, 0, 0, 0.6)";
+    } else {
+      document.body.style.overflow = "auto";
+      document.body.style.background= "rgba(0, 0, 0, 0)";
+    }
+
     return (
       <div className={styles.reviewSection}>
-        <hr className={styles.hor} />
+        <hr />
 
         <Stars
           reviews={this.filterReviews()}
@@ -76,8 +89,21 @@ class App extends React.Component {
           currentHouse={this.state.currentHouse}
         />
 
-        <button className={styles.showButton}>Show all {this.filterReviews().length} reviews</button>
-        {this.state.popUp ? <PopUp /> : null}
+        <button onClick={this.setPopUp} className={styles.showButton}>
+          Show all {this.filterReviews().length} reviews
+        </button>
+
+        {this.state.popUp ? (
+          <PopUp
+            users={this.state.users}
+            className={styles.popUp}
+            closePopUp={this.closePopUp}
+            show={this.state.popUp}
+            reviews={this.filterReviews()}
+            currentHouse={this.state.currentHouse}
+          />
+        ) : null}
+
         <hr className={styles.hor} />
       </div>
     );
