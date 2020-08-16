@@ -14,11 +14,16 @@ const Reviews = (props) => {
   return (
     <div className={styles.reviews}>
       {sixEntries().map((review, index) => (
-        <UserInfo key={review.userId} review={review} user={props.users[review.userId]} currentHouse={props.currentHouse}/>
+        <UserInfo
+          popUp={props.popUp}
+          key={index}
+          review={review}
+          user={props.users[review.userId]}
+          currentHouse={props.currentHouse}
+        />
       ))}
     </div>
   )
-
 }
 
 export default Reviews;

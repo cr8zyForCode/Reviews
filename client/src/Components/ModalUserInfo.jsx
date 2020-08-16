@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "../Styles/UserInfo.css";
+import styles from "../Styles/ModalUserInfo.css";
 
-const UserInfo = (props) => {
+const ModalUserInfo = (props) => {
   let [displayReadMore, setReadMore] = React.useState(false);
   let [remainingReviews, setRemainingReviews] = React.useState("");
 
@@ -12,13 +12,15 @@ const UserInfo = (props) => {
 
   return (
     <div className={styles.user}>
+
       <img
-        className={props.popUp ? styles.userUrlPopUp : styles.userUrl}
+        className={styles.userUrl}
         src={props.user.userUrl}
         onClick={() => {
           alert(`Hi my name is ${props.user.userName}`);
         }}
       />
+
       <span className={styles.users}>
         <span className={styles.userName}> {props.user.userName} </span>
         <br />
@@ -33,12 +35,13 @@ const UserInfo = (props) => {
           {displayReadMore ? null : (
             <React.Fragment>
               <span>...</span>
+
               <button
                 className={styles.readMore}
                 onClick={() => handleMoreButton(props.review.review.slice(150))}
-              >
-                read more
+              >read more
               </button>
+
             </React.Fragment>
           )}
           <span>{remainingReviews}</span>
@@ -48,4 +51,4 @@ const UserInfo = (props) => {
   );
 };
 
-export default UserInfo;
+export default ModalUserInfo;
