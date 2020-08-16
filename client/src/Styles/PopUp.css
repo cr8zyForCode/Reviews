@@ -6,12 +6,11 @@
   height: 90%;
   top: 2%;
   left: 15%;
-  right: -10%;
   background: white;
   align-self: center;
   position: fixed;
   overflow: auto;
-  animation: popup 0.35s;
+  animation: popup 0.30s;
 }
 
 @keyframes popup {
@@ -28,12 +27,10 @@
   100% { transform: translateY(0%)}
 }
 
-
-
 .button {
   grid-column: 1/2;
   grid-row: 1/2;
-  margin: 20px 30px;
+  margin: 30px 30px;
   width: 15px;
   height: 15px;
   background: transparent;

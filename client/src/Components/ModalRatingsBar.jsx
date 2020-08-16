@@ -2,7 +2,6 @@ import React from "react";
 import styles from "../Styles/ModalRatingsBar.css";
 
 const ModalRatingsBar = (props) => {
-  // get each specific rating type and their avg and display them here
 
   return (
     <div className={styles.ratings}>

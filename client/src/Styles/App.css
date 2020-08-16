@@ -1,3 +1,7 @@
+.reviewSection {
+  display: grid;
+  justify-content: center;
+}
 
 .hor {
   border: 0;
@@ -5,10 +9,6 @@
   border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.reviewSection {
-  display: grid;
-  justify-content: center;
-}
 
 .showButton {
   margin-top: -500px;
@@ -26,6 +26,26 @@
   border-style: solid;
   margin: 30px 0px 50px;
   background-color: white;
+}
+
+.showButtonPopUp {
+  filter: brightness(45%);
+  margin-top: -500px;
+  cursor: pointer;
+  text-align: center;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  padding: 10px 10px;
+  width: 190px;
+  height: 48px;
+  border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  margin: 30px 0px 50px;
+  background-color: white;
+  outline:0;
 }
 
 .showButton:hover {

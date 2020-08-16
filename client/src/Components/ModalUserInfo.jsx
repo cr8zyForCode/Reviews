@@ -12,6 +12,7 @@ const ModalUserInfo = (props) => {
 
   return (
     <div className={styles.user}>
+
       <img
         className={styles.userUrl}
         src={props.user.userUrl}
@@ -19,6 +20,7 @@ const ModalUserInfo = (props) => {
           alert(`Hi my name is ${props.user.userName}`);
         }}
       />
+
       <span className={styles.users}>
         <span className={styles.userName}> {props.user.userName} </span>
         <br />
@@ -33,12 +35,13 @@ const ModalUserInfo = (props) => {
           {displayReadMore ? null : (
             <React.Fragment>
               <span>...</span>
+
               <button
                 className={styles.readMore}
                 onClick={() => handleMoreButton(props.review.review.slice(150))}
-              >
-                read more
+              >read more
               </button>
+
             </React.Fragment>
           )}
           <span>{remainingReviews}</span>

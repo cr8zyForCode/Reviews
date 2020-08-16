@@ -3,12 +3,25 @@
   display: flex;
 }
 
-.star {
+.starPopUp {
+  fill: #FF385C;
+  filter: brightness(40%);
   min-width: 18px;
   max-width: 18px;
   min-height: 18px;
   max-height: 18px;
   margin-right: 10px;
+  background: transparent;
+}
+
+.star {
+  fill: #FF385C;
+  min-width: 18px;
+  max-width: 18px;
+  min-height: 18px;
+  max-height: 18px;
+  margin-right: 10px;
+  background: transparent;
 }
 
 .reviewText {

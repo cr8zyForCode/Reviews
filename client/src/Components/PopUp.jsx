@@ -8,9 +8,13 @@ const PopUp = (props) => {
 
   return (
     <div className={styles.modal}>
-      <button className={styles.button} onClick={props.closePopUp}>
-        X
-      </button>
+
+      <img
+        className={styles.button}
+        onClick={props.closePopUp}
+        src="https://7528bnbimages.s3-us-west-1.amazonaws.com/x.jpg"
+      />
+
       <ModalStars
         reviews={props.reviews}
         currentHouse={props.currentHouse}
@@ -26,6 +30,7 @@ const PopUp = (props) => {
         reviews={props.reviews}
         currentHouse={props.currentHouse}
       />
+
     </div>
   );
 }

@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from '../Styles/ModalStars.css';
+import React from "react";
+import styles from "../Styles/ModalStars.css";
 
 const ModalStars = (props) => {
   let total = 0;
@@ -20,15 +20,17 @@ const ModalStars = (props) => {
 
   return (
     <div className={styles.starComp}>
+
       <img
         className={styles.star}
         src="https://7528bnbimages.s3-us-west-1.amazonaws.com/bnbstar.png"
       />
+
       <span className={styles.reviewText}>
         {(total / 6 / numberOfReview).toFixed(2)} ({numberOfReview} reviews)
       </span>
     </div>
   );
-}
+};
 
 export default ModalStars;

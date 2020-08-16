@@ -13,6 +13,17 @@
   border-radius: 50px;
 }
 
+.userUrlPopUp {
+  grid-row: 1/1;
+  grid-column: 1/1;
+  filter: brightness(50%);
+  min-width: 56px;
+  max-width: 56px;
+  min-height: 56px;
+  max-height: 56px;
+  border-radius: 50px;
+}
+
 .user {
   width: 300px;
   display: grid;

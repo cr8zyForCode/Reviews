@@ -3,9 +3,6 @@ import styles from "../Styles/ModalRatingsContainer.css";
 import ModalRatingsBar from "./ModalRatingsBar.jsx";
 
 const ModalRatingsContainer = (props) => {
-  //change each div to correspoding rating type
-
-  // "cleanRating":3,"accRating":3,"commRating":3,"locationRating":5,"checkInRating":5,"valueRating":5}
   let avgRating = (typeOfRating) => {
     let total = 0;
     props.reviews.map((rating) => {
