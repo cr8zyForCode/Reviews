@@ -106,6 +106,7 @@ class App extends React.Component {
 
         {this.state.popUp ? (
           <PopUp
+            comments={this.state.comments}
             className={styles.modal}
             users={this.state.users}
             closePopUp={this.closePopUp}

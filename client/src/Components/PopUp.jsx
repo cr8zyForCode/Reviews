@@ -26,6 +26,7 @@ const PopUp = (props) => {
       />
 
       <ModalReviews
+        comments={props.comments}
         users={props.users}
         reviews={props.reviews}
         currentHouse={props.currentHouse}
