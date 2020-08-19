@@ -4,9 +4,10 @@ import ModalUserInfo from "./ModalUserInfo.jsx";
 
 const ModalReviews = (props) => {
   // map trhough 6 data entries
-  const sixEntries = () => {
-    return props.reviews.filter((review, index) => index < 6);
-  };
+
+  // const sixEntries = () => {
+  //   return props.reviews.filter((review, index) => index < 6);
+  // };
 
   return (
     <div className={styles.reviews}>
