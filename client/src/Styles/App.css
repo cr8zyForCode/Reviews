@@ -28,26 +28,6 @@
   background-color: white;
 }
 
-.showButtonPopUp {
-  filter: brightness(45%);
-  margin-top: -500px;
-  cursor: pointer;
-  text-align: center;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
-  padding: 10px 10px;
-  width: 190px;
-  height: 48px;
-  border-radius: 8px;
-  border-width: 1px;
-  border-style: solid;
-  margin: 30px 0px 50px;
-  background-color: white;
-  outline:0;
-}
-
 .showButton:hover {
   background-color: #cccc;
 }
@@ -63,4 +43,22 @@
 .popUp {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  z-index: 100;
+
+}
+
+.background {
+  align-items: center;
+  display: flex;
+  padding: 40px;
+  z-index: 100;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  padding-top: 12px;
+  flex-direction: row;
+  justify-content: center;
+  background-color: rgba(72, 72, 72, 0.75);
 }

@@ -71,11 +71,8 @@ class App extends React.Component {
 
     if (this.state.popUp) {
       document.body.style.overflow = "hidden";
-      document.body.style.background = "rgba(0, 0, 0, 0.5)";
-
     } else {
       document.body.style.overflow = "auto";
-      document.body.style.background = "rgba(0, 0, 0, 0)";
     }
 
     return (
@@ -100,21 +97,25 @@ class App extends React.Component {
 
         <button
           onClick={this.setPopUp}
-          className={this.state.popUp ? styles.showButtonPopUp : styles.showButton}
+          className={styles.showButton}
         >
           Show all {this.filterReviews().length} reviews
         </button>
 
         {this.state.popUp ? (
-          <PopUp
-            comments={this.state.comments}
-            className={styles.modal}
-            users={this.state.users}
-            closePopUp={this.closePopUp}
-            show={this.state.popUp}
-            reviews={this.filterReviews()}
-            currentHouse={this.state.currentHouse}
-          />
+          <React.Fragment>
+            <div className={styles.background}>
+              <PopUp
+                comments={this.state.comments}
+                className={styles.popUp}
+                users={this.state.users}
+                closePopUp={this.closePopUp}
+                show={this.state.popUp}
+                reviews={this.filterReviews()}
+                currentHouse={this.state.currentHouse}
+            />
+            </div>
+          </React.Fragment>
         ) : null}
       </div>
     );

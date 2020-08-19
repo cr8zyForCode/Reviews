@@ -13,7 +13,7 @@ const UserInfo = (props) => {
   return (
     <div className={styles.user}>
       <img
-        className={props.popUp ? styles.userUrlPopUp : styles.userUrl}
+        className={styles.userUrl}
         src={props.user.userUrl}
         onClick={() => {
           alert(`Hi my name is ${props.user.userName}`);
