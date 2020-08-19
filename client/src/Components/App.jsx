@@ -45,7 +45,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({ currentHouse: this.rdm(1, 100) });
+    let roomId = window.location.pathname.split("/")[2];
+    this.setState({ currentHouse: Number(roomId) });
     this.getAllData();
   }
 

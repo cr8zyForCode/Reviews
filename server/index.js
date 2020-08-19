@@ -5,7 +5,7 @@ const model = require('../db/model.js');
 const parser = require('body-parser')
 const path = require('path');
 
-app.use('/', express.static(path.join(__dirname, '../client/dist')));
+app.use('/rooms/:roomId', express.static(path.join(__dirname, '../client/dist')));
 app.use(parser.urlencoded({extended: false}));
 
 app.listen(port, () => console.log(`Listening At Port ${port}`))
