@@ -1,6 +1,7 @@
 const db = require('./index.js');
 const faker = require('faker');
 
+
 const rdm = (min, max) => {
   return Math.floor(Math.random() * (max - min)) + min;
 };
@@ -57,7 +58,7 @@ const seedUsers = () => {
 const seedReviews = () => {
   for (let i = 1; i <= 3000; i++) {
     let review = faker.lorem.sentences();
-    let postQuery = `INSERT INTO reviews(userId, review, houseId, cleanRating, accRating, commRating, locationRating, checkInRating, valueRating) VALUES(${rdm(1,201)}, "${review}", ${rdm(1, 101)}, ${rdm(3, 6)}, ${rdm(3, 6)}, ${rdm(3, 6)}, ${rdm(3, 6)}, ${rdm(3, 6)}, ${rdm(3, 6)})`;
+    let postQuery = `INSERT INTO reviews(userId, review, houseId, cleanRating, accRating, commRating, locationRating, checkInRating, valueRating) VALUES(${rdm(1,200)}, "${review}", ${rdm(1, 101)}, ${rdm(3, 6)}, ${rdm(3, 6)}, ${rdm(3, 6)}, ${rdm(3, 6)}, ${rdm(3, 6)}, ${rdm(3, 6)})`;
     db.query(postQuery, (err, data) => {
       if (err) {
         console.log(err, "error");
@@ -82,4 +83,3 @@ seedHouses();
 seedUsers();
 seedReviews();
 seedComments();
-db.end();

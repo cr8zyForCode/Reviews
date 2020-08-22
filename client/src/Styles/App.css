@@ -1,6 +1,11 @@
 .reviewSection {
   display: grid;
   justify-content: center;
+  margin-left: 100px;
+}
+
+.other {
+  width: 90%;
 }
 
 .hor {

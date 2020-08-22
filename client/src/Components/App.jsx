@@ -77,46 +77,45 @@ class App extends React.Component {
 
     return (
       <div className={styles.reviewSection}>
-        <Stars
-          popUp={this.state.pop}
-          reviews={this.filterReviews()}
-          currentHouse={this.state.currentHouse}
-        />
+        <div className={styles.other}>
+          <Stars
+            popUp={this.state.pop}
+            reviews={this.filterReviews()}
+            currentHouse={this.state.currentHouse}
+          />
 
-        <RatingsContainer
-          reviews={this.filterReviews()}
-          currentHouse={this.state.currentHouse}
-        />
+          <RatingsContainer
+            reviews={this.filterReviews()}
+            currentHouse={this.state.currentHouse}
+          />
 
-        <Reviews
-          popUp={this.state.popUp}
-          users={this.state.users}
-          reviews={this.filterReviews()}
-          currentHouse={this.state.currentHouse}
-        />
+          <Reviews
+            popUp={this.state.popUp}
+            users={this.state.users}
+            reviews={this.filterReviews()}
+            currentHouse={this.state.currentHouse}
+          />
 
-        <button
-          onClick={this.setPopUp}
-          className={styles.showButton}
-        >
-          Show all {this.filterReviews().length} reviews
-        </button>
+          <button onClick={this.setPopUp} className={styles.showButton}>
+            Show all {this.filterReviews().length} reviews
+          </button>
 
-        {this.state.popUp ? (
-          <React.Fragment>
-            <div className={styles.background}>
-              <PopUp
-                comments={this.state.comments}
-                className={styles.popUp}
-                users={this.state.users}
-                closePopUp={this.closePopUp}
-                show={this.state.popUp}
-                reviews={this.filterReviews()}
-                currentHouse={this.state.currentHouse}
-            />
-            </div>
-          </React.Fragment>
-        ) : null}
+          {this.state.popUp ? (
+            <React.Fragment>
+              <div className={styles.background}>
+                <PopUp
+                  comments={this.state.comments}
+                  className={styles.popUp}
+                  users={this.state.users}
+                  closePopUp={this.closePopUp}
+                  show={this.state.popUp}
+                  reviews={this.filterReviews()}
+                  currentHouse={this.state.currentHouse}
+                />
+              </div>
+            </React.Fragment>
+          ) : null}
+        </div>
       </div>
     );
   }

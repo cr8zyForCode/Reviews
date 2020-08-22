@@ -12,7 +12,7 @@
 
 .ratings {
   display: grid;
-  grid-template-columns: repeat(2, minmax(245px, 245px));
+  grid-template-columns: repeat(2, minmax(260px, 260px));
 }
 
 .typeRating {
