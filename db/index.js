@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
 const mysql = require("mysql");
-const host = "172.17.0.2"; //localhost
+const host = "localhost"; // 172.17.0.2
 
 const connection = mysql.createConnection({
   host: host,
   user: "root",
-  password: "reborn7528",
+  password: "",
   database: "FEC",
 });
 

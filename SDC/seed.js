@@ -81,7 +81,7 @@ const seedReviews = (number) => {
   let dataString = 'reviewID, userId, review, housId, cleanRating, accRating, commRating, locationRating, checkInRating, valueRating \n'
   for (let i = 1; i <= number; i++) {
     let review = faker.lorem.sentences();
-    dataString += `${i%5},`;
+    dataString += `${i},`;
     dataString += ` ${i},`;
     dataString += ` ${review}, `;
     dataString += ` ${i},`;
