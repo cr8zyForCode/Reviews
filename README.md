@@ -1,10 +1,10 @@
 ## Server API
 
 ### Get restaurant info
-  * GET `/houses/:id`
+  * GET `/houses/:houseId`
 
 **Path Parameters:**
-  * `id` house id
+  * `houseId` house id
 
 **Success Status Code:** `200`
 

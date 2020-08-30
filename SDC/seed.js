@@ -47,7 +47,7 @@ const seedUsers = (number) => {
   const year = [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021];
   const month = [1,2,3,4,5,6,7,8,9,10,11,12];
 
-  let dataString = 'userId, userName, userUrl, dateReviewd \n'
+  let dataString = 'userId, userName, userUrl, dateReviewed \n'
   for (let i = 1; i <= number; i++) {
     let url = `https://7528userurl.s3-us-west-1.amazonaws.com/userImage${users[i%10]}.jpg`;
     let name = faker.name.firstName();
@@ -77,7 +77,7 @@ seedUsers(10)
 
 const seedReviews = (number) => {
 
-  let rateNumber = [1,2,3,4,5]
+  let rateNum = [1,2,3,4,5]
   let dataString = 'reviewID, userId, review, housId, cleanRating, accRating, commRating, locationRating, checkInRating, valueRating \n'
   for (let i = 1; i <= number; i++) {
     let review = faker.lorem.sentences();
