@@ -28,26 +28,35 @@ class App extends React.Component {
     return Math.ceil(Math.random() * (max - min)) + min;
   }
 
-  getAllData() {
+  getAllData(roomId) {
     axios
-      .get("/reviews/users")
-      .then((users) => this.setState({ users: users.data }));
-    axios
-      .get("/reviews/comments")
-      .then((comments) => this.setState({ comments: comments.data }));
-    axios
-      .get("/reviews/houses")
-      .then((houses) => this.setState({ houses: houses.data }));
-    axios
-      .get("/reviews")
-      .then((reviews) => this.setState({ reviews: reviews.data }))
+      .get(`/houses/${roomId}`)
+      // .then((result) => {console.log(result)})
+      .then((result) => this.setState({
+        reviews: result.data
+      //   users: result.data.userName,
+       }))
+
+    // axios
+    //   .get("/reviews/comments")
+    //   .then((comments) => this.setState({ comments: comments.data }));
+
+    // axios
+    //   .get("/reviews/users")
+    //   .then((users) => this.setState({ users: users.data }));
+    // axios
+    //   .get("/reviews/houses")
+    //   .then((houses) => this.setState({ houses: houses.data }));
+    // axios
+    //   .get("/reviews")
+    //   .then((reviews) => this.setState({ reviews: reviews.data }))
       .catch();
   }
 
   componentDidMount() {
     let roomId = window.location.pathname.split("/")[2];
     this.setState({ currentHouse: Number(roomId) });
-    this.getAllData();
+    this.getAllData(roomId);
   }
 
   filterReviews() {

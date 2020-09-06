@@ -3,10 +3,10 @@
 -- CREATE DATABASE SDC;
 USE SDC;
 
--- DROP TABLE if exists houses;
--- DROP TABLE if exists users;
+DROP TABLE if exists houses;
+DROP TABLE if exists users;
 -- DROP TABLE if exists reviews;
--- DROP TABLE if exists comments;
+DROP TABLE if exists comments;
 
 CREATE TABLE if not exists houses (
   houseId SERIAL NOT NULL UNIQUE PRIMARY KEY,
