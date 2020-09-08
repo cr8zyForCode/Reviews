@@ -10,11 +10,11 @@ USE sdc;
 
 ---> GET/POST Request
 
--- CREATE TABLE houses(
---   houseId int,
---   houseName varchar,
---   PRIMARY KEY(houseId)
--- );
+CREATE TABLE houses(
+  houseId int,
+  houseName varchar,
+  PRIMARY KEY(houseId)
+);
 
 
 CREATE TABLE reviews(
@@ -33,8 +33,8 @@ CREATE TABLE reviews(
   valueRating int,
   dateReviewed text,
   comment text,
-  PRIMARY KEY (houseId, reviewId)
-  -- // AND CLUSTERING ORDER BY (dateReviewed DSC) ;
+  PRIMARY KEY (reviewId)
+  AND CLUSTERING ORDER BY (houseId asc) ;
 );
 
 
