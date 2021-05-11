@@ -34,22 +34,23 @@ class App extends React.Component {
       // .then((result) => {console.log(result)})
       .then((result) => this.setState({
         reviews: result.data
-      //   users: result.data.userName,
-       }))
+        //   users: result.data.userName,
+      }))
 
-    // axios
-    //   .get("/reviews/comments")
-    //   .then((comments) => this.setState({ comments: comments.data }));
+      // TODO: implement axios:
+      // axios
+      //   .get("/reviews/comments")
+      //   .then((comments) => this.setState({ comments: comments.data }));
 
-    // axios
-    //   .get("/reviews/users")
-    //   .then((users) => this.setState({ users: users.data }));
-    // axios
-    //   .get("/reviews/houses")
-    //   .then((houses) => this.setState({ houses: houses.data }));
-    // axios
-    //   .get("/reviews")
-    //   .then((reviews) => this.setState({ reviews: reviews.data }))
+      // axios
+      //   .get("/reviews/users")
+      //   .then((users) => this.setState({ users: users.data }));
+      // axios
+      //   .get("/reviews/houses")
+      //   .then((houses) => this.setState({ houses: houses.data }));
+      // axios
+      //   .get("/reviews")
+      //   .then((reviews) => this.setState({ reviews: reviews.data }))
       .catch();
   }
 
